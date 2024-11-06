@@ -7,11 +7,14 @@
 body {
   font-family: Arial, sans-serif;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 20px;
   background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   animation: colorChange 10s infinite;
+  overflow-x: hidden;
 }
 
 header {
@@ -20,35 +23,49 @@ header {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2em;
   color: #fff;
 }
 
-.input-section {
+.input-section, #result-section {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
-#language, #name, #submit, #follow-channel {
-  margin: 10px 0;
-  padding: 10px 15px;
+label, select, input, button {
+  width: 100%;
+  margin-top: 10px;
   font-size: 1em;
+}
+
+#language, #name {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#submit, #follow-channel, #copy, #share {
+  padding: 12px 20px;
+  font-size: 1em;
+  color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
   transition: background 0.3s ease;
-}
-
-#language {
-  width: 50%;
-}
-
-#name {
-  width: calc(50% - 20px);
 }
 
 #submit {
   background: #6c63ff;
-  color: #fff;
-  cursor: pointer;
 }
 
 #submit:hover {
@@ -56,52 +73,49 @@ h1 {
 }
 
 #follow-channel {
-  padding: 10px 20px;
-  font-size: 1em;
-  cursor: pointer;
   background: #25d366; /* WhatsApp green */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: all 0.3s ease;
 }
 
 #follow-channel:hover {
   background: #128c7e;
 }
 
-.hidden {
-  display: none;
-}
-
-#result-section {
-  text-align: center;
-  margin-top: 20px;
-}
-
-#traits-list p {
-  font-size: 1.1em;
-  color: #333;
-}
-
 #copy, #share {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 1em;
-  cursor: pointer;
   background: #ff6b6b;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: background 0.3s ease;
 }
 
 #copy:hover, #share:hover {
   background: #d9534f;
 }
 
+#traits-list p {
+  font-size: 1.1em;
+  color: #333;
+  margin: 5px 0;
+}
+
+.hidden {
+  display: none;
+}
+
 @keyframes colorChange {
   0% { background: #ff9a9e; }
   50% { background: #fad0c4; }
   100% { background: #ff9a9e; }
+}
+
+/* Media query for smaller devices */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .input-section, #result-section {
+    width: 90%;
+  }
+
+  #submit, #follow-channel, #copy, #share {
+    font-size: 0.9em;
+    padding: 10px 15px;
+  }
 }
