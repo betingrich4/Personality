@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Know Your Personality</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Know Your Personality</h1>
+  </header>
+
+  <section class="input-section">
+    <label for="language">Select Language:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="es">Spanish</option>
+      <option value="fr">French</option>
+      <option value="de">German</option>
+      <option value="sw">Swahili</option>
+      <!-- Add more languages as needed -->
+    </select>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <button id="submit" onclick="generatePersonality()">Discover</button>
+    <button id="follow-channel" onclick="followChannel()">Follow Our Channel</button>
+  </section>
+
+  <section id="result-section" class="hidden">
+    <h2>Your Personality Traits</h2>
+    <div id="traits-list"></div>
+    <button id="copy" onclick="copyToClipboard()">Copy to Clipboard</button>
+    <button id="share" onclick="shareResult()">Share on Status</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
